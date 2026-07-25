@@ -48,6 +48,7 @@ class ContactController extends Controller
 
         $contact->tags()->attach($tagIds);
 
-        return view('contact.thanks');
+        return redirect('/thanks');
     }
+
 }

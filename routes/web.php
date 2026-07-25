@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/contacts/confirm', [ContactController::class, 'confirm']);
 Route::post('/contacts', [ContactController::class, 'store']);
-Route::get('/thanks', [ContactController::class, 'thanks']);
+Route::view('/thanks', 'contact.thanks');
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware('auth');
 Route::get('/admin/contacts/{contact}', [AdminController::class, 'show']);
