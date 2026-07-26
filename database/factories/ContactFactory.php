@@ -24,7 +24,7 @@ class ContactFactory extends Factory
             'tel' => fake()->numerify('090########'),
             'address' => fake()->address(),
             'building' => fake()->optional()->bothify('コーポ?? ###号室'),
-            'detail' => fake()->text(120),
+            'detail' => 'テストのお問い合わせ内容です。',
         ];
     }
 }
