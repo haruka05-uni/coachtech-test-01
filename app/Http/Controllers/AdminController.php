@@ -11,9 +11,6 @@ use App\Http\Requests\IndexContactRequest;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(IndexContactRequest $request)
     {
         $categories = Category::all();
@@ -50,9 +47,6 @@ class AdminController extends Controller
         return view('admin.index', compact('categories', 'contacts', 'tags'));
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Contact $contact)
     {
         $contact->load(['category', 'tags']);
@@ -60,9 +54,6 @@ class AdminController extends Controller
         return view('admin.show', compact('contact'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $contact = Contact::findOrFail($id);

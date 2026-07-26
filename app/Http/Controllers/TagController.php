@@ -10,9 +10,6 @@ use App\Http\Requests\UpdateTagRequest;
 
 class TagController extends Controller
 {
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreTagRequest $request)
     {
         $validated = $request->validated();
@@ -21,18 +18,10 @@ class TagController extends Controller
 
         return redirect('/admin');
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Tag $tag)
     {
         return view('admin.tags.edit', compact('tag'));
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateTagRequest $request, string $id)
     {
         $validated = $request->validated();
@@ -44,9 +33,6 @@ class TagController extends Controller
         return redirect('/admin');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(string $id)
     {
         $tag = Tag::findOrFail($id);
